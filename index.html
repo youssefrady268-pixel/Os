@@ -34,7 +34,7 @@
                 <div class="app-name">Developer</div>
             </div>
 
-            <div class="app-card" onclick="triggerFilePicker()">
+            <div class="app-card" onclick="openApp('File Explorer', 'files.qaw')">
                 <div class="app-icon">📁</div>
                 <div class="app-name">Files</div>
             </div>
@@ -55,24 +55,36 @@
             </div>
         </div>
 
-        <!-- Hidden Input for .qaw File Inspection -->
+        <!-- Hidden input for scanning .qaw files from storage -->
         <input type="file" id="qaw-file-input" accept=".qaw" style="display: none;" onchange="scanLocalQawFile(event)">
 
-        <!-- System Console Log -->
+        <!-- Live Terminal Console Log -->
         <div class="system-logs" id="log-box">
             [BOOT] QAW OS Emulator Initialized.<br>
-            [STATUS] System Services Starting...<br>
+            [STATUS] System Services Active.<br>
         </div>
 
         <!-- Bottom Navigation Controls -->
         <div class="nav-bar">
-            <button class="nav-btn" onclick="logSystemEvent('Navigated to Home')">🏠 Home</button>
-            <button class="nav-btn" onclick="logSystemEvent('Opened Task Manager')">▢ Tasks</button>
-            <button class="nav-btn" onclick="logSystemEvent('Pressed Back Button')">◀ Back</button>
+            <button class="nav-btn" onclick="closeApp(); logSystemEvent('Navigated to Home');">🏠 Home</button>
+            <button class="nav-btn" onclick="logSystemEvent('Task Manager Opened')">▢ Tasks</button>
+            <button class="nav-btn" onclick="closeApp(); logSystemEvent('Pressed Back Button');">◀ Back</button>
+        </div>
+
+        <!-- App Window Overlay -->
+        <div class="modal-overlay" id="app-modal">
+            <div class="modal-window">
+                <div class="modal-header">
+                    <span id="modal-title">App Window</span>
+                    <button class="close-btn" onclick="closeApp()">×</button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- Dynamic App Interface Injected Here -->
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
