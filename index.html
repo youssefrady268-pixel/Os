@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAW OS - Home Screen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="phone-emulator">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span>QAW OS</span>
+            <span id="live-clock">00:00</span>
+            <span id="battery-display">100% 🔋</span>
+        </div>
+
+        <!-- Clock Widget -->
+        <div class="widget-clock">
+            <h1 id="widget-time">00:00</h1>
+            <p>Home Screen</p>
+        </div>
+
+        <!-- Main Apps Grid -->
+        <div class="home-grid">
+            <div class="app-card" onclick="openApp('QAW Store', 'store.qaw')">
+                <div class="app-icon">🛒</div>
+                <div class="app-name">QAW Store</div>
+            </div>
+
+            <div class="app-card" onclick="openApp('Developer Portal', 'developer.qaw')">
+                <div class="app-icon">🛠️</div>
+                <div class="app-name">Developer</div>
+            </div>
+
+            <div class="app-card" onclick="triggerFilePicker()">
+                <div class="app-icon">📁</div>
+                <div class="app-name">Files</div>
+            </div>
+
+            <div class="app-card" onclick="openApp('Settings', 'settings.qaw')">
+                <div class="app-icon">⚙️</div>
+                <div class="app-name">Settings</div>
+            </div>
+
+            <div class="app-card" onclick="openApp('Terminal', 'terminal.qaw')">
+                <div class="app-icon">💻</div>
+                <div class="app-name">Terminal</div>
+            </div>
+
+            <div class="app-card" onclick="openApp('Calculator', 'calc.qaw')">
+                <div class="app-icon">🧮</div>
+                <div class="app-name">Calculator</div>
+            </div>
+        </div>
+
+        <!-- Hidden Input for .qaw File Inspection -->
+        <input type="file" id="qaw-file-input" accept=".qaw" style="display: none;" onchange="scanLocalQawFile(event)">
+
+        <!-- System Console Log -->
+        <div class="system-logs" id="log-box">
+            [BOOT] QAW OS Emulator Initialized.<br>
+            [STATUS] System Services Starting...<br>
+        </div>
+
+        <!-- Bottom Navigation Controls -->
+        <div class="nav-bar">
+            <button class="nav-btn" onclick="logSystemEvent('Navigated to Home')">🏠 Home</button>
+            <button class="nav-btn" onclick="logSystemEvent('Opened Task Manager')">▢ Tasks</button>
+            <button class="nav-btn" onclick="logSystemEvent('Pressed Back Button')">◀ Back</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
