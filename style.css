@@ -29,7 +29,7 @@ body {
     overflow: hidden;
 }
 
-/* Top System Status Bar */
+/* Status Bar */
 .status-bar {
     display: flex;
     justify-content: space-between;
@@ -43,7 +43,7 @@ body {
 /* Clock Header Widget */
 .widget-clock {
     text-align: center;
-    margin: 25px 0 15px 0;
+    margin: 20px 0 10px 0;
 }
 
 .widget-clock h1 {
@@ -60,12 +60,12 @@ body {
     letter-spacing: 1px;
 }
 
-/* Applications Grid Layout */
+/* Application Grid */
 .home-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    padding: 10px;
+    padding: 8px;
 }
 
 .app-card {
@@ -97,7 +97,7 @@ body {
     color: #c9d1d9;
 }
 
-/* Terminal Console Log Output */
+/* System Console Log */
 .system-logs {
     background: #0d1117;
     border: 1px solid #30363d;
@@ -106,12 +106,12 @@ body {
     font-family: monospace;
     font-size: 11px;
     color: #7ee787;
-    height: 90px;
+    height: 85px;
     overflow-y: auto;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
-/* Bottom System Nav Controls */
+/* Bottom Navigation Controls */
 .nav-bar {
     display: flex;
     justify-content: space-around;
@@ -136,3 +136,112 @@ body {
     color: #58a6ff;
 }
 
+/* App Window Modal */
+.modal-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    padding: 14px;
+}
+
+.modal-window {
+    width: 100%;
+    height: 92%;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+.modal-header {
+    background: #0d1117;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #21262d;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: #f85149;
+    border: none;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-body {
+    flex-grow: 1;
+    padding: 14px;
+    overflow-y: auto;
+}
+
+/* Common UI Components */
+.form-group { margin-bottom: 12px; }
+.form-group label { display: block; font-size: 11px; color: #8b949e; margin-bottom: 4px; }
+.form-group input, .form-group textarea {
+    width: 100%;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    color: #ffffff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    outline: none;
+}
+
+.action-btn {
+    width: 100%;
+    background: #238636;
+    color: white;
+    border: none;
+    padding: 9px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.action-btn:hover { background: #2ea043; }
+
+/* Calculator UI */
+.calc-wrapper { display: flex; flex-direction: column; gap: 10px; }
+.calc-screen {
+    width: 100%; height: 45px; background: #0d1117;
+    border: 1px solid #30363d; border-radius: 10px; color: #58a6ff;
+    font-size: 22px; text-align: right; padding: 0 10px; outline: none;
+}
+.calc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.calc-btn {
+    height: 44px; background: #21262d; border: 1px solid #30363d;
+    border-radius: 8px; color: white; font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.calc-btn.op { background: #30363d; color: #58a6ff; }
+.calc-btn.danger { background: rgba(248, 81, 73, 0.2); color: #ff7b72; border-color: #f85149; }
+.calc-btn.success { background: #238636; border-color: #2ea043; }
+
+/* File Explorer & Store Lists */
+.list-container { display: flex; flex-direction: column; gap: 8px; }
+.list-item {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #0d1117; border: 1px solid #21262d; padding: 10px; border-radius: 8px; font-size: 12px;
+}
+.small-btn {
+    background: #21262d; border: 1px solid #30363d; color: #58a6ff;
+    padding: 4px 8px; border-radius: 6px; font-size: 11px; cursor: pointer;
+}
