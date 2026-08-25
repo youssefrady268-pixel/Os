@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #e6edf3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.phone-emulator {
+    width: 390px;
+    height: 760px;
+    background: #161b22;
+    border: 4px solid #30363d;
+    border-radius: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top System Status Bar */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #8b949e;
+    padding: 4px 8px 12px 8px;
+    border-bottom: 1px solid #21262d;
+}
+
+/* Clock Header Widget */
+.widget-clock {
+    text-align: center;
+    margin: 25px 0 15px 0;
+}
+
+.widget-clock h1 {
+    font-size: 48px;
+    font-weight: 300;
+    color: #f0f6fc;
+    letter-spacing: -1px;
+}
+
+.widget-clock p {
+    font-size: 13px;
+    color: #58a6ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Applications Grid Layout */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 10px;
+}
+
+.app-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 20px;
+    height: 85px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.app-card:hover {
+    transform: scale(1.06);
+    background: #282e37;
+}
+
+.app-icon {
+    font-size: 26px;
+    margin-bottom: 4px;
+}
+
+.app-name {
+    font-size: 11px;
+    font-weight: 500;
+    color: #c9d1d9;
+}
+
+/* Terminal Console Log Output */
+.system-logs {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 11px;
+    color: #7ee787;
+    height: 90px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+/* Bottom System Nav Controls */
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #0d1117;
+    border-radius: 16px;
+    padding: 10px 0;
+    border: 1px solid #21262d;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #8b949e;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav-btn:hover {
+    color: #58a6ff;
+}
+
